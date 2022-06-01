@@ -26982,6 +26982,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
+var _invoicePage = require("./pages/invoicePage/InvoicePage");
+var _invoicePageDefault = parcelHelpers.interopDefault(_invoicePage);
 var _invoiceListPage = require("./pages/invoiceListPage/InvoiceListPage");
 var _invoiceListPageDefault = parcelHelpers.interopDefault(_invoiceListPage);
 var _invoiceDetailsPage = require("./pages/invoiceDetailsPage/InvoiceDetailsPage");
@@ -27000,91 +27002,113 @@ var _clientDetailsPage = require("./pages/clientDetailsPage/ClientDetailsPage");
 var _clientDetailsPageDefault = parcelHelpers.interopDefault(_clientDetailsPage);
 var _createClientPage = require("./pages/createClientPage/CreateClientPage");
 var _createClientPageDefault = parcelHelpers.interopDefault(_createClientPage);
+var _navbar = require("./components/navbar/Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                path: "invoices",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _invoiceListPageDefault.default), {}, void 0, false, void 0, void 0),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: ":invoiceId",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _invoiceDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
+                        path: "/invoices",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "list",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _invoiceListPageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 20,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: ":invoiceId",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _invoiceDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 21,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "new-invoice",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoicePageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 22,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/App.js",
-                        lineNumber: 16,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "new-invoice",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoicePageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 17,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/App.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                path: "estimates",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _estimateListPageDefault.default), {}, void 0, false, void 0, void 0),
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: ":estimateId",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _estimateDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 20,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "new-estimate",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createEstimatePageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 21,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/App.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                path: "clients",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _clientListPageDefault.default), {}, void 0, false, void 0, void 0),
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: ":clientId",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _clientDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
+                        path: "/estimates",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _estimateListPageDefault.default), {}, void 0, false, void 0, void 0),
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: ":estimateId",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _estimateDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 25,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "new-estimate",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createEstimatePageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 26,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/App.js",
                         lineNumber: 24,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "new-client",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createClientPageDefault.default), {}, void 0, false, void 0, void 0)
-                    }, void 0, false, {
+                        path: "/clients",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _clientListPageDefault.default), {}, void 0, false, void 0, void 0),
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: ":clientId",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _clientDetailsPageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 29,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "new-client",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createClientPageDefault.default), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 30,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/App.js",
-                        lineNumber: 25,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/App.js",
-                lineNumber: 23,
+                lineNumber: 18,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 14,
+        lineNumber: 16,
         columnNumber: 5
     }, this);
 }
@@ -27098,7 +27122,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./pages/invoiceListPage/InvoiceListPage":"3W3K6","./pages/invoiceDetailsPage/InvoiceDetailsPage":"b2sJU","./pages/createInvoicePage/CreateInvoicePage":"iu06I","./pages/estimateListPage/EstimateListPage":"cE1DI","./pages/estimateDetailsPage/EstimateDetailsPage":"l5i0H","./pages/createEstimatePage/CreateEstimatePage":"cNbTF","./pages/clientListPage/ClientListPage":"3x1l0","./pages/clientDetailsPage/ClientDetailsPage":"cRyhG","./pages/createClientPage/CreateClientPage":"icE3p"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./pages/invoiceListPage/InvoiceListPage":"3W3K6","./pages/invoiceDetailsPage/InvoiceDetailsPage":"b2sJU","./pages/createInvoicePage/CreateInvoicePage":"iu06I","./pages/estimateListPage/EstimateListPage":"cE1DI","./pages/estimateDetailsPage/EstimateDetailsPage":"l5i0H","./pages/createEstimatePage/CreateEstimatePage":"cNbTF","./pages/clientListPage/ClientListPage":"3x1l0","./pages/clientDetailsPage/ClientDetailsPage":"cRyhG","./pages/createClientPage/CreateClientPage":"icE3p","./components/navbar/Navbar":"iETaP","./pages/invoicePage/InvoicePage":"f77fn"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -28958,13 +28982,246 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _invoiceListPageScss = require("./InvoiceListPage.scss");
+var _reactRouterDom = require("react-router-dom");
 const InvoiceListPage = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "dkInvoiceListPage",
-        children: "InvoiceListPage"
-    }, void 0, false, {
+        className: "dkInvoiceListPage pt-3",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "row",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "col-12",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "card bg-dark",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "d-flex justify-content-between align-items-center p-3 text-light",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                                            children: "Invoice List"
+                                        }, void 0, false, {
+                                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                            lineNumber: 13,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "button-container",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                    to: "new-invoice",
+                                                    className: "btn btn-success me-3",
+                                                    children: "Create Invoice"
+                                                }, void 0, false, {
+                                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                    lineNumber: 15,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                    className: "btn btn-secondary",
+                                                    children: "Export"
+                                                }, void 0, false, {
+                                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                    lineNumber: 18,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                            lineNumber: 14,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                    lineNumber: 12,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
+                                    className: "table table-dark table-striped",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("thead", {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        children: "Customer"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 24,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        children: "Date"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 25,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        children: "ID"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 26,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        className: "text-end",
+                                                        children: "Total"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 27,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        children: "Status"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 30,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        scope: "col",
+                                                        className: "text-end",
+                                                        children: "Action"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 31,
+                                                        columnNumber: 21
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                lineNumber: 23,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                            lineNumber: 22,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tbody", {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        children: "Test Testerton"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 38,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        children: "01 Jan 2022"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 39,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        children: "INV-001"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 40,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        className: "text-end",
+                                                        children: "$10,300.00"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 41,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        children: "Paid"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 42,
+                                                        columnNumber: 21
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            className: "d-flex justify-content-end align-items-center",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    className: "btn btn-primary",
+                                                                    children: "view"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                                    lineNumber: 45,
+                                                                    columnNumber: 25
+                                                                }, undefined),
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    className: "btn btn-danger",
+                                                                    children: "remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                                    lineNumber: 46,
+                                                                    columnNumber: 25
+                                                                }, undefined)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                            lineNumber: 44,
+                                                            columnNumber: 23
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                        lineNumber: 43,
+                                                        columnNumber: 21
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                                lineNumber: 37,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                            lineNumber: 36,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                                    lineNumber: 21,
+                                    columnNumber: 15
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                            lineNumber: 11,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                        lineNumber: 10,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
+                lineNumber: 56,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/pages/invoiceListPage/InvoiceListPage.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };
@@ -28978,7 +29235,7 @@ $RefreshReg$(_c, "InvoiceListPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./InvoiceListPage.scss":"lvHIq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lvHIq":[function() {},{}],"b2sJU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./InvoiceListPage.scss":"lvHIq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw"}],"lvHIq":[function() {},{}],"b2sJU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e017 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29242,6 +29499,186 @@ $RefreshReg$(_c, "CreateClientPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CreateClientPage.scss":"aPikF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aPikF":[function() {},{}],"irmnC":[function() {},{}]},["1xC6H","dB9nQ","bB7Pu"], "bB7Pu", "parcelRequire3fcf")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CreateClientPage.scss":"aPikF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aPikF":[function() {},{}],"iETaP":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e375 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e375.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+const Navbar = ()=>{
+    const activeStyle = {
+        textDecoration: "underline"
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+        className: "navbar navbar-expand-lg navbar-dark bg-dark",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container-fluid",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                    className: "navbar-brand",
+                    href: "#",
+                    children: "Pinnup Invoices"
+                }, void 0, false, {
+                    fileName: "src/components/navbar/Navbar.jsx",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "navbar-toggler",
+                    type: "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#navbarSupportedContent",
+                    "aria-controls": "navbarSupportedContent",
+                    "aria-expanded": "false",
+                    "aria-label": "Toggle navigation",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "navbar-toggler-icon"
+                    }, void 0, false, {
+                        fileName: "src/components/navbar/Navbar.jsx",
+                        lineNumber: 23,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/navbar/Navbar.jsx",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "collapse navbar-collapse",
+                    id: "navbarSupportedContent",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        className: "navbar-nav ms-auto mb-2 mb-lg-0",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                                    to: "/invoices/list",
+                                    style: ({ isActive  })=>isActive ? activeStyle : undefined,
+                                    className: "nav-link",
+                                    end: true,
+                                    children: "Invoices"
+                                }, void 0, false, {
+                                    fileName: "src/components/navbar/Navbar.jsx",
+                                    lineNumber: 28,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/navbar/Navbar.jsx",
+                                lineNumber: 27,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                                    to: "/estimates",
+                                    style: ({ isActive  })=>isActive ? activeStyle : undefined,
+                                    className: "nav-link",
+                                    children: "Estimates"
+                                }, void 0, false, {
+                                    fileName: "src/components/navbar/Navbar.jsx",
+                                    lineNumber: 38,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/navbar/Navbar.jsx",
+                                lineNumber: 37,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                                    to: "/clients",
+                                    style: ({ isActive  })=>isActive ? activeStyle : undefined,
+                                    className: "nav-link",
+                                    children: "Clients"
+                                }, void 0, false, {
+                                    fileName: "src/components/navbar/Navbar.jsx",
+                                    lineNumber: 47,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/navbar/Navbar.jsx",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/navbar/Navbar.jsx",
+                        lineNumber: 26,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/navbar/Navbar.jsx",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/navbar/Navbar.jsx",
+            lineNumber: 10,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/navbar/Navbar.jsx",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Navbar;
+exports.default = Navbar;
+var _c;
+$RefreshReg$(_c, "Navbar");
+
+  $parcel$ReactRefreshHelpers$e375.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw"}],"f77fn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ab40 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ab40.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _invoicePageScss = require("./InvoicePage.scss");
+var _reactRouterDom = require("react-router-dom");
+const InvoicePage = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "dkInvoicePage",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+            fileName: "src/pages/invoicePage/InvoicePage.jsx",
+            lineNumber: 8,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/pages/invoicePage/InvoicePage.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = InvoicePage;
+exports.default = InvoicePage;
+var _c;
+$RefreshReg$(_c, "InvoicePage");
+
+  $parcel$ReactRefreshHelpers$ab40.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./InvoicePage.scss":"74J4L","react-router-dom":"fdOAw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"74J4L":[function() {},{}],"irmnC":[function() {},{}]},["1xC6H","dB9nQ","bB7Pu"], "bB7Pu", "parcelRequire3fcf")
 
 //# sourceMappingURL=index.3d214d75.js.map
