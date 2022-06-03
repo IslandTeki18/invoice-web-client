@@ -26,7 +26,7 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink
-                to="/invoices/list"
+                to="invoices/list"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className="nav-link"
                 end
@@ -36,7 +36,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/estimates"
+                to="estimates/list"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className="nav-link"
               >
@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/clients"
+                to="clients/list"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className="nav-link"
               >

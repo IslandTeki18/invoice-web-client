@@ -27015,7 +27015,8 @@ function App() {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/invoices",
+                        path: "invoices",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _invoicePageDefault.default), {}, void 0, false, void 0, void 0),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                                 path: "list",
@@ -27048,7 +27049,7 @@ function App() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/estimates",
+                        path: "estimates",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _estimateListPageDefault.default), {}, void 0, false, void 0, void 0),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27074,7 +27075,7 @@ function App() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/clients",
+                        path: "clients",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _clientListPageDefault.default), {}, void 0, false, void 0, void 0),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -29010,7 +29011,7 @@ const InvoiceListPage = ()=>{
                                             className: "button-container",
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                    to: "new-invoice",
+                                                    to: "/invoices/new-invoice",
                                                     className: "btn btn-success me-3",
                                                     children: "Create Invoice"
                                                 }, void 0, false, {
@@ -29559,7 +29560,7 @@ const Navbar = ()=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 className: "nav-item",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                    to: "/invoices/list",
+                                    to: "invoices/list",
                                     style: ({ isActive  })=>isActive ? activeStyle : undefined,
                                     className: "nav-link",
                                     end: true,
@@ -29577,7 +29578,7 @@ const Navbar = ()=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 className: "nav-item",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                    to: "/estimates",
+                                    to: "estimates/list",
                                     style: ({ isActive  })=>isActive ? activeStyle : undefined,
                                     className: "nav-link",
                                     children: "Estimates"
@@ -29594,7 +29595,7 @@ const Navbar = ()=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 className: "nav-item",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                    to: "/clients",
+                                    to: "clients/list",
                                     style: ({ isActive  })=>isActive ? activeStyle : undefined,
                                     className: "nav-link",
                                     children: "Clients"

@@ -16,16 +16,16 @@ function App() {
     <main>
       <Navbar />
       <Routes>
-        <Route path="/invoices">
+        <Route path="invoices" element={<InvoicePage />} >
           <Route path="list" element={<InvoiceListPage />} />
           <Route path=":invoiceId" element={<InvoiceDetailsPage />} />
           <Route path="new-invoice" element={<CreateInvoicePage />} />
         </Route>
-        <Route path="/estimates" element={<EstimateListPage />}>
+        <Route path="estimates" element={<EstimateListPage />}>
           <Route path=":estimateId" element={<EstimateDetailsPage />} />
           <Route path="new-estimate" element={<CreateEstimatePage />} />
         </Route>
-        <Route path="/clients" element={<ClientListPage />}>
+        <Route path="clients" element={<ClientListPage />}>
           <Route path=":clientId" element={<ClientDetailsPage />} />
           <Route path="new-client" element={<CreateClientPage />} />
         </Route>

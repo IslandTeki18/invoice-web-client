@@ -12,7 +12,7 @@ const InvoiceListPage = () => {
               <div className="d-flex justify-content-between align-items-center p-3 text-light">
                 <h4>Invoice List</h4>
                 <div className="button-container">
-                  <Link to="new-invoice" className="btn btn-success me-3">
+                  <Link to="/invoices/new-invoice" className="btn btn-success me-3">
                     Create Invoice
                   </Link>
                   <button className="btn btn-secondary">Export</button>
