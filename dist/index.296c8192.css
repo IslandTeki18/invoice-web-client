@@ -10,7 +10,13 @@
 
 
 
+.dkCreateInvoiceCardItems .color-trash {
+  color: red;
+}
 
+.dkCreateInvoiceCardItems .color-edit {
+  color: #00cf00;
+}
 
 
 
