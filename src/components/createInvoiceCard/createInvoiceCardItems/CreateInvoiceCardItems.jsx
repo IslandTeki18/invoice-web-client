@@ -3,7 +3,6 @@ import "./CreateInvoiceCardItems.scss";
 import Input from "../../input/Input";
 
 const CreateInvoiceCardItems = () => {
-  // TODO: Remove all of the console logs
   const [item, setItem] = useState({
     title: "",
     description: "",
@@ -11,17 +10,49 @@ const CreateInvoiceCardItems = () => {
     price: 0,
     total: 0,
   });
-  const [itemArray, setItemArray] = useState([item]);
-  console.log("Items: ", itemArray);
+  const [itemArray, setItemArray] = useState([]);
+  const [itemsAndTotal, setItemsAndTotal] = useState({
+    items: itemArray,
+    tax: "tax",
+    discount: "discount",
+    subTotal: 0,
+    grandTotal: 0,
+  });
+  useEffect(() => {
+    calculateSubTotal();
+    calculateGrandTotal();
+  }, [itemArray]);
 
-  function calculateTotalFromPrice(price) {
-    const quanity = item.quanity;
-    let total = quanity * price;
-    return total;
+  function calculateItemTotal(price, qty) {
+    return Number(qty * price);
+  }
+  function calculateSubTotal() {
+    if (!itemArray) return itemsAndTotal.subTotal;
+    let subTotal = itemArray.reduce((prev, curr) => prev + curr.total, 0);
+    setItemsAndTotal((prevState) => {
+      return {
+        ...prevState,
+        subTotal: subTotal,
+      };
+    });
+    return itemsAndTotal.subTotal;
+  }
+  function calculateGrandTotal() {
+    if (!itemArray) return itemsAndTotal.grandTotal;
+    let grandTotal = itemArray.reduce((prev, curr) => prev + curr.total, 0);
+    // Add tax object
+    // Add discount object
+    setItemsAndTotal((prevState) => {
+      return {
+        ...prevState,
+        grandTotal: grandTotal,
+      };
+    });
+    return itemsAndTotal.grandTotal;
   }
   function createNewItems() {
     const createdItem = item;
-    createdItem.total = calculateTotalFromPrice(createdItem.price);
+    createdItem.total = calculateItemTotal(createdItem.price);
     let newArray = [...itemArray];
     newArray.push(createdItem);
     setItemArray(newArray);
@@ -43,7 +74,7 @@ const CreateInvoiceCardItems = () => {
   function renderItems() {
     if (isNaN(!itemArray)) return;
     return itemArray.map((item, index) => (
-      <tr key={`item-${index}`}>
+      <tr key={`item-${index}`} className="border-bottom border-bottom-dashed">
         <td>
           <div className="title-description">
             <Input
@@ -85,9 +116,9 @@ const CreateInvoiceCardItems = () => {
             id="invoice-price-input"
           />
         </td>
-        <td>${item.total}</td>
-        <td className="d-flex justify-content-end">
-          <button className="btn btn-link" onClick={removeItem}>
+        <td>${(item.total = calculateItemTotal(item.price, item.quanity))}</td>
+        <td className="text-end">
+          <button className="btn btn-link" onClick={() => removeItem(index)}>
             <i className="fa-solid fa-trash-can color-trash" />
           </button>
         </td>
@@ -113,18 +144,55 @@ const CreateInvoiceCardItems = () => {
             {itemArray.length > 0 ? (
               renderItems()
             ) : (
-              <tr>
+              <tr className="border-bottom border-bottom-dashed">
                 <td colSpan={5}>No Items</td>
               </tr>
             )}
-            <tr>
-              <td>
+          </tbody>
+          <tfoot>
+            <tr className="border-top border-top-dashed align-top fs-6 fw-bolder text-gray-700">
+              <th className="text-primary">
                 <button className="btn btn-link" onClick={createNewItems}>
                   Add Item
                 </button>
-              </td>
+              </th>
+              <th
+                colSpan="2"
+                className="border-bottom border-bottom-dashed ps-0"
+              >
+                <div className="d-flex flex-column align-items-start">
+                  <div className="fs-5">Subtotal</div>
+                  <button
+                    className="btn btn-link"
+                    onClick={() => alert("Coming Soon")}
+                  >
+                    Add Tax
+                  </button>
+                  <button
+                    className="btn btn-link"
+                    onClick={() => alert("Coming Soon")}
+                  >
+                    Add Discount
+                  </button>
+                </div>
+              </th>
+              <th
+                colSpan="2"
+                className="border-bottom border-bottom-dashed text-end"
+              >
+                ${itemsAndTotal.subTotal}
+              </th>
             </tr>
-          </tbody>
+            <tr className="align-top fw-bolder text-gray-700">
+              <th></th>
+              <th colSpan="2" className="fs-4 ps-0">
+                Total
+              </th>
+              <th colSpan="2" className="text-end fs-4 text-nowrap">
+                ${itemsAndTotal.grandTotal}
+              </th>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>
