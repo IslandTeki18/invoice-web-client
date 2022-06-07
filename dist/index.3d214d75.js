@@ -29401,6 +29401,13 @@ const CreateInvoiceCard = (props)=>{
             billToEmail: "",
             billToAddress: "",
             billToPhone: ""
+        },
+        items: {
+            items: [],
+            tax: "tax",
+            discount: "discount",
+            subTotal: 0,
+            grandTotal: 0
         }
     });
     console.log("Invoice Form: ", invoiceForm);
@@ -29427,12 +29434,12 @@ const CreateInvoiceCard = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 27,
+                        lineNumber: 34,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 42,
+                        lineNumber: 49,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoiceCardBodyDefault.default), {
@@ -29446,42 +29453,51 @@ const CreateInvoiceCard = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 43,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoiceCardItemsDefault.default), {}, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoiceCardItemsDefault.default), {
+                        invoiceItemCallback: (items)=>{
+                            setInvoiceForm((prevState)=>{
+                                return {
+                                    ...prevState,
+                                    items: items
+                                };
+                            });
+                        }
+                    }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 53,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 54,
+                        lineNumber: 70,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createInvoiceCardFooterDefault.default), {}, void 0, false, {
                         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                        lineNumber: 55,
+                        lineNumber: 71,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-                lineNumber: 26,
+                lineNumber: 33,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-            lineNumber: 25,
+            lineNumber: 32,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/createInvoiceCard/CreateInvoiceCard.jsx",
-        lineNumber: 24,
+        lineNumber: 31,
         columnNumber: 5
     }, undefined);
 };
-_s(CreateInvoiceCard, "rNheK+/ux1l3QzLprUZ4oSIDndU=");
+_s(CreateInvoiceCard, "WKlFVN7guJBaiErjtMHmxOSh1Zc=");
 _c = CreateInvoiceCard;
 CreateInvoiceCard.defaultProps = {
     className: ""
@@ -30529,14 +30545,29 @@ const CreateInvoiceCardFooter = ()=>{
         className: "dkCreateInvoiceCardFooter",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "footer-wrapper",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Card Footer"
-            }, void 0, false, {
-                fileName: "src/components/createInvoiceCard/createInvoiceCardFooter/CreateInvoiceCardFooter.jsx",
-                lineNumber: 8,
-                columnNumber: 11
-            }, undefined)
-        }, void 0, false, {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                    htmlFor: "notes",
+                    className: "form-label",
+                    children: "Notes"
+                }, void 0, false, {
+                    fileName: "src/components/createInvoiceCard/createInvoiceCardFooter/CreateInvoiceCardFooter.jsx",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                    className: "form-control",
+                    id: "notes",
+                    rows: "3",
+                    placeholder: "Thank you for your business",
+                    valu: true
+                }, void 0, false, {
+                    fileName: "src/components/createInvoiceCard/createInvoiceCardFooter/CreateInvoiceCardFooter.jsx",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
             fileName: "src/components/createInvoiceCard/createInvoiceCardFooter/CreateInvoiceCardFooter.jsx",
             lineNumber: 7,
             columnNumber: 7
@@ -30731,6 +30762,14 @@ const CreateInvoiceCardItems = ()=>{
     }, [
         itemArray
     ]);
+    (0, _react.useEffect)(()=>{
+        if (itemsAndTotal.grandTotal > 0 && itemsAndTotal.subTotal > 0) propsCallback();
+    }, [
+        itemsAndTotal
+    ]);
+    function propsCallback() {
+        props.invoiceItemCallback(itemsAndTotal);
+    }
     function calculateItemTotal(price, qty) {
         return Number(qty * price);
     }
@@ -30807,7 +30846,7 @@ const CreateInvoiceCardItems = ()=>{
                                     id: "invoice-title-input"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _inputDefault.default), {
@@ -30819,18 +30858,18 @@ const CreateInvoiceCardItems = ()=>{
                                     id: "invoice-description-input"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 89,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 79,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 78,
+                        lineNumber: 87,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
@@ -30843,12 +30882,12 @@ const CreateInvoiceCardItems = ()=>{
                             id: "invoice-qunaity-input"
                         }, void 0, false, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 100,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 99,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
@@ -30861,12 +30900,12 @@ const CreateInvoiceCardItems = ()=>{
                             id: "invoice-price-input"
                         }, void 0, false, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 110,
+                            lineNumber: 119,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 109,
+                        lineNumber: 118,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
@@ -30876,7 +30915,7 @@ const CreateInvoiceCardItems = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 119,
+                        lineNumber: 128,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
@@ -30888,23 +30927,23 @@ const CreateInvoiceCardItems = ()=>{
                                 className: "fa-solid fa-trash-can color-trash"
                             }, void 0, false, {
                                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                lineNumber: 122,
+                                lineNumber: 131,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 121,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 120,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this)
                 ]
             }, `item-${index}`, true, {
                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                lineNumber: 77,
+                lineNumber: 86,
                 columnNumber: 7
             }, this));
     }
@@ -30925,7 +30964,7 @@ const CreateInvoiceCardItems = ()=>{
                                     children: "Item"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 134,
+                                    lineNumber: 143,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -30933,7 +30972,7 @@ const CreateInvoiceCardItems = ()=>{
                                     children: "QTY"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 135,
+                                    lineNumber: 144,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -30941,7 +30980,7 @@ const CreateInvoiceCardItems = ()=>{
                                     children: "Price"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 136,
+                                    lineNumber: 145,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -30949,7 +30988,7 @@ const CreateInvoiceCardItems = ()=>{
                                     children: "Total"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 137,
+                                    lineNumber: 146,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -30958,18 +30997,18 @@ const CreateInvoiceCardItems = ()=>{
                                     children: "Action"
                                 }, void 0, false, {
                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                    lineNumber: 138,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 133,
+                            lineNumber: 142,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 132,
+                        lineNumber: 141,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tbody", {
@@ -30980,17 +31019,17 @@ const CreateInvoiceCardItems = ()=>{
                                 children: "No Items"
                             }, void 0, false, {
                                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                lineNumber: 148,
+                                lineNumber: 157,
                                 columnNumber: 17
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                            lineNumber: 147,
+                            lineNumber: 156,
                             columnNumber: 15
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 143,
+                        lineNumber: 152,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tfoot", {
@@ -31006,12 +31045,12 @@ const CreateInvoiceCardItems = ()=>{
                                             children: "Add Item"
                                         }, void 0, false, {
                                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                            lineNumber: 155,
+                                            lineNumber: 164,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 154,
+                                        lineNumber: 163,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -31025,7 +31064,7 @@ const CreateInvoiceCardItems = ()=>{
                                                     children: "Subtotal"
                                                 }, void 0, false, {
                                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 173,
                                                     columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -31034,7 +31073,7 @@ const CreateInvoiceCardItems = ()=>{
                                                     children: "Add Tax"
                                                 }, void 0, false, {
                                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 174,
                                                     columnNumber: 19
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -31043,18 +31082,18 @@ const CreateInvoiceCardItems = ()=>{
                                                     children: "Add Discount"
                                                 }, void 0, false, {
                                                     fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 180,
                                                     columnNumber: 19
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                            lineNumber: 163,
+                                            lineNumber: 172,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 159,
+                                        lineNumber: 168,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -31066,13 +31105,13 @@ const CreateInvoiceCardItems = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 179,
+                                        lineNumber: 188,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                lineNumber: 153,
+                                lineNumber: 162,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
@@ -31080,7 +31119,7 @@ const CreateInvoiceCardItems = ()=>{
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {}, void 0, false, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 187,
+                                        lineNumber: 196,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -31089,7 +31128,7 @@ const CreateInvoiceCardItems = ()=>{
                                         children: "Total"
                                     }, void 0, false, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 188,
+                                        lineNumber: 197,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("th", {
@@ -31101,39 +31140,39 @@ const CreateInvoiceCardItems = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                        lineNumber: 191,
+                                        lineNumber: 200,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                                lineNumber: 186,
+                                lineNumber: 195,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                        lineNumber: 152,
+                        lineNumber: 161,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-                lineNumber: 131,
+                lineNumber: 140,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-            lineNumber: 130,
+            lineNumber: 139,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/createInvoiceCard/createInvoiceCardItems/CreateInvoiceCardItems.jsx",
-        lineNumber: 129,
+        lineNumber: 138,
         columnNumber: 5
     }, undefined);
 };
-_s(CreateInvoiceCardItems, "Z3nWGVzW5Uat4VGbBK7dCfR2ib8=");
+_s(CreateInvoiceCardItems, "GIfLHegZEOdPuHvXuwkSskudE5s=");
 _c = CreateInvoiceCardItems;
 exports.default = CreateInvoiceCardItems;
 var _c;

@@ -5,4 +5,26 @@
   .color-edit {
     color: #00cf00;
   }
+  .border-top-dashed {
+    border-top-style: dashed !important;
+  }
+  .border-bottom-dashed {
+    border-bottom-style: dashed !important;
+  }
+  .table > :not(:first-child) {
+    border-color: transparent;
+    border-width: 0;
+    border-style: none;
+  }
+  .table tr, .table th, .table td {
+    border-color: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    height: inherit;
+    min-height: inherit;
+  }
 }

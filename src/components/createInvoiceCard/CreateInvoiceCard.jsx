@@ -18,6 +18,13 @@ const CreateInvoiceCard = (props) => {
       billToAddress: "",
       billToPhone: "",
     },
+    items: {
+      items: [],
+      tax: "tax",
+      discount: "discount",
+      subTotal: 0,
+      grandTotal: 0,
+    },
   });
   console.log("Invoice Form: ", invoiceForm);
   return (
@@ -50,7 +57,16 @@ const CreateInvoiceCard = (props) => {
               });
             }}
           />
-          <CreateInvoiceCardItems />
+          <CreateInvoiceCardItems
+            invoiceItemCallback={(items) => {
+              setInvoiceForm((prevState) => {
+                return {
+                  ...prevState,
+                  items: items,
+                };
+              });
+            }}
+          />
           <hr />
           <CreateInvoiceCardFooter />
         </div>

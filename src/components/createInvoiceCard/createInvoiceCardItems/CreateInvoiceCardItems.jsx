@@ -23,6 +23,15 @@ const CreateInvoiceCardItems = () => {
     calculateGrandTotal();
   }, [itemArray]);
 
+  useEffect(() => {
+    if (itemsAndTotal.grandTotal > 0 && itemsAndTotal.subTotal > 0)
+      propsCallback();
+  }, [itemsAndTotal]);
+
+  function propsCallback() {
+    props.invoiceItemCallback(itemsAndTotal);
+  }
+
   function calculateItemTotal(price, qty) {
     return Number(qty * price);
   }
