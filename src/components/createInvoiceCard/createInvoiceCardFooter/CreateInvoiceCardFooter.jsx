@@ -1,7 +1,16 @@
-import React from "react";
+import { useState } from "react";
 import "./CreateInvoiceCardFooter.scss";
 
 const CreateInvoiceCardFooter = () => {
+  const [notes, setNotes] = useState("");
+
+  function sendData(e) {
+    e.preventDefault();
+    setNotes(e.target.value);
+    setTimeout(() => {
+      props.notesCallback(notes);
+    }, 5000);
+  }
   return (
     <div className="dkCreateInvoiceCardFooter">
       <div className="footer-wrapper">
@@ -13,7 +22,8 @@ const CreateInvoiceCardFooter = () => {
           id="notes"
           rows="3"
           placeholder="Thank you for your business"
-          valu
+          value={notes}
+          onChange={sendData}
         />
       </div>
     </div>

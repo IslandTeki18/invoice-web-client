@@ -25,6 +25,7 @@ const CreateInvoiceCard = (props) => {
       subTotal: 0,
       grandTotal: 0,
     },
+    notes: "",
   });
   console.log("Invoice Form: ", invoiceForm);
   return (
@@ -59,6 +60,7 @@ const CreateInvoiceCard = (props) => {
           />
           <CreateInvoiceCardItems
             invoiceItemCallback={(items) => {
+              console.log("Items Callback: ", items);
               setInvoiceForm((prevState) => {
                 return {
                   ...prevState,
@@ -68,7 +70,16 @@ const CreateInvoiceCard = (props) => {
             }}
           />
           <hr />
-          <CreateInvoiceCardFooter />
+          <CreateInvoiceCardFooter
+            notesCallback={(notes) => {
+              setInvoiceForm((prevState) => {
+                return {
+                  ...prevState,
+                  notes: notes,
+                };
+              });
+            }}
+          />
         </div>
       </div>
     </div>

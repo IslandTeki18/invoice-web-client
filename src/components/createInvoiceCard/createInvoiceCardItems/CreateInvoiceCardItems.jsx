@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./CreateInvoiceCardItems.scss";
 import Input from "../../input/Input";
 
-const CreateInvoiceCardItems = () => {
+const CreateInvoiceCardItems = (props) => {
   const [item, setItem] = useState({
     title: "",
     description: "",
@@ -12,7 +12,7 @@ const CreateInvoiceCardItems = () => {
   });
   const [itemArray, setItemArray] = useState([]);
   const [itemsAndTotal, setItemsAndTotal] = useState({
-    items: itemArray,
+    items: [...itemArray],
     tax: "tax",
     discount: "discount",
     subTotal: 0,
@@ -29,6 +29,8 @@ const CreateInvoiceCardItems = () => {
   }, [itemsAndTotal]);
 
   function propsCallback() {
+    console.log("Items Array: ", itemArray);
+    console.log("Items and Total: ", itemsAndTotal);
     props.invoiceItemCallback(itemsAndTotal);
   }
 
