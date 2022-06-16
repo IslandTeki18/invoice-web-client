@@ -8,7 +8,14 @@
 
 
 
+.dkCreateInvoiceCardHeader .title-wrapper, .dkCreateInvoiceCardHeader .date-wrapper {
+  align-items: center;
+  display: flex;
+}
 
+.dkCreateInvoiceCardHeader .dueDate-label {
+  width: 100px;
+}
 
 .dkCreateInvoiceCardItems .color-trash {
   color: red;

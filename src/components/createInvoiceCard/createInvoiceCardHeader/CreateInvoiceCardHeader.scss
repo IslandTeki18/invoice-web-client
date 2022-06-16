@@ -1,0 +1,13 @@
+.dkCreateInvoiceCardHeader {
+    .title-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .date-wrapper {
+        display: flex;
+        align-items: center
+    }
+    .dueDate-label {
+        width: 100px
+    }
+}

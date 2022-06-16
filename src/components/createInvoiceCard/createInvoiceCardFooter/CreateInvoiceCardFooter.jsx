@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./CreateInvoiceCardFooter.scss";
 
-const CreateInvoiceCardFooter = () => {
+const CreateInvoiceCardFooter = (props) => {
   const [notes, setNotes] = useState("");
 
+  useEffect(() => {
+    props.notesCallback(notes);
+  }, [notes]);
+
   function sendData(e) {
-    e.preventDefault();
     setNotes(e.target.value);
-    setTimeout(() => {
-      props.notesCallback(notes);
-    }, 5000);
   }
+  
   return (
     <div className="dkCreateInvoiceCardFooter">
       <div className="footer-wrapper">

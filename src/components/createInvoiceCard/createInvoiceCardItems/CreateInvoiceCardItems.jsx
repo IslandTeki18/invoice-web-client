@@ -26,11 +26,15 @@ const CreateInvoiceCardItems = (props) => {
   useEffect(() => {
     if (itemsAndTotal.grandTotal > 0 && itemsAndTotal.subTotal > 0)
       propsCallback();
-  }, [itemsAndTotal]);
+  }, [itemsAndTotal.subTotal]);
 
   function propsCallback() {
-    console.log("Items Array: ", itemArray);
-    console.log("Items and Total: ", itemsAndTotal);
+    setItemsAndTotal((prevState) => {
+      return {
+        ...prevState,
+        items: itemArray,
+      };
+    });
     props.invoiceItemCallback(itemsAndTotal);
   }
 

@@ -8,6 +8,7 @@ const CreateInvoiceCard = (props) => {
   const [invoiceForm, setInvoiceForm] = useState({
     startDate: "",
     dueDate: "",
+    invoiceNum: "",
     billForm: {
       billFromName: "",
       billFromEmail: "",
@@ -37,12 +38,13 @@ const CreateInvoiceCard = (props) => {
               startDate: invoiceForm.stateDate,
               dueDate: invoiceForm.dueDate,
             }}
-            dateCallback={(dates) => {
+            dateCallback={(dates, invoiceNum) => {
               setInvoiceForm((prevState) => {
                 return {
                   ...prevState,
                   startDate: dates.startDate,
                   dueDate: dates.dueDate,
+                  invoiceNum: invoiceNum
                 };
               });
             }}
@@ -60,7 +62,6 @@ const CreateInvoiceCard = (props) => {
           />
           <CreateInvoiceCardItems
             invoiceItemCallback={(items) => {
-              console.log("Items Callback: ", items);
               setInvoiceForm((prevState) => {
                 return {
                   ...prevState,
